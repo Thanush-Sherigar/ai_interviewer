@@ -15,19 +15,19 @@ export async function POST(req) {
     // 2. Role + difficulty-based prompt
     const rolePrompts = {
       frontend: {
-        easy: `You are a senior frontend interviewer. Ask beginner-level questions about HTML, CSS, or basic JavaScript.`,
-        medium: `You are a senior frontend interviewer. Ask intermediate-level questions about JavaScript, React, and DOM manipulation.`,
-        hard: `You are a senior frontend interviewer. Ask advanced-level questions about React internals, performance, and architecture.`,
+        easy: `You are a senior frontend interviewer. Ask beginner-level questions about HTML, CSS, or basic JavaScript.one q at a time wait for response`,
+        medium: `You are a senior frontend interviewer. Ask intermediate-level questions about JavaScript, React, and DOM manipulation.one q at a time wait for response`,
+        hard: `You are a senior frontend interviewer. Ask advanced-level questions about React internals, performance, and architecture.one q at a time wait for response`,
       },
       backend: {
-        easy: `You are a backend interviewer. Ask simple questions about APIs, HTTP, and Node.js basics.`,
-        medium: `You are a backend interviewer. Ask moderate questions about Express, database queries, and authentication.`,
-        hard: `You are a backend interviewer. Ask advanced questions about architecture, scaling, and security.`,
+        easy: `You are a backend interviewer. Ask simple questions about APIs, HTTP, and Node.js basics.one q at a time wait for response`,
+        medium: `You are a backend interviewer. Ask moderate questions about Express, database queries, and authentication.one q at a time wait for response`,
+        hard: `You are a backend interviewer. Ask advanced questions about architecture, scaling, and security.one q at a time wait for response`,
       },
       devops: {
-        easy: `You are a DevOps interviewer. Ask beginner-level questions on Git, Linux commands, and system basics.`,
-        medium: `You are a DevOps interviewer. Ask about CI/CD pipelines, Docker, and basic automation.`,
-        hard: `You are a DevOps interviewer. Ask about Kubernetes, monitoring, incident handling, and high-availability systems.`,
+        easy: `You are a DevOps interviewer. Ask beginner-level questions on Git, Linux commands, and system basics.one q at a time wait for response`,
+        medium: `You are a DevOps interviewer. Ask about CI/CD pipelines, Docker, and basic automation.one q at a time wait for response`,
+        hard: `You are a DevOps interviewer. Ask about Kubernetes, monitoring, incident handling, and high-availability systems.one q at a time wait for response`,
       },
     };
 
