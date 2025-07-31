@@ -27,7 +27,8 @@ Include:
 - The candidate’s communication and problem-solving
 - Strengths and weaknesses
 - Whether they are a good fit
-
+- On what should they improve
+- Any red flags
 Interview Transcript:
 ${transcript}
 `;
