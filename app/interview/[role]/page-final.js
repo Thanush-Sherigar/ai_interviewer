@@ -19,6 +19,7 @@ export default function InterviewPage() {
   const [loading, setLoading] = useState(false);
   const [interviewStarted, setInterviewStarted] = useState(false);
 
+  // Role configurations
   const roleConfig = {
     frontend: { icon: '🎨', color: 'primary', label: 'Frontend Developer' },
     backend: { icon: '⚙️', color: 'success', label: 'Backend Developer' },
@@ -31,6 +32,7 @@ export default function InterviewPage() {
     hard: { icon: '🎯', color: 'danger', label: 'Advanced' }
   };
 
+  // Start initial interview when component loads
   useEffect(() => {
     if (messages.length === 0 && !interviewStarted) {
       setInterviewStarted(true);
@@ -73,7 +75,7 @@ Are you ready to begin? Just say "yes" or "I'm ready" when you'd like to start w
       console.error('Chat error:', err);
       setMessages((prev) => [...prev, { 
         role: 'assistant', 
-        content: 'I am experiencing technical difficulties. Please try again in a moment.' 
+        content: 'I\'m experiencing technical difficulties. Please try again in a moment.' 
       }]);
     } finally {
       setLoading(false);
@@ -113,6 +115,7 @@ Are you ready to begin? Just say "yes" or "I'm ready" when you'd like to start w
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      {/* Header */}
       <div className="bg-white/90 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -160,9 +163,11 @@ Are you ready to begin? Just say "yes" or "I'm ready" when you'd like to start w
         </div>
       </div>
 
+      {/* Main Content */}
       <div className="max-w-6xl mx-auto px-6 py-6">
         {!review ? (
           <div className="grid lg:grid-cols-4 gap-6">
+            {/* Chat Interface */}
             <div className="lg:col-span-3">
               <Card padding="none" className="h-[calc(100vh-200px)]">
                 <ChatInterface
@@ -176,7 +181,9 @@ Are you ready to begin? Just say "yes" or "I'm ready" when you'd like to start w
               </Card>
             </div>
 
+            {/* Sidebar */}
             <div className="lg:col-span-1 space-y-4">
+              {/* Tips Card */}
               <Card>
                 <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
                   💡 Interview Tips
@@ -190,6 +197,7 @@ Are you ready to begin? Just say "yes" or "I'm ready" when you'd like to start w
                 </ul>
               </Card>
 
+              {/* Progress Card */}
               <Card>
                 <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
                   📊 Session Progress
@@ -212,6 +220,7 @@ Are you ready to begin? Just say "yes" or "I'm ready" when you'd like to start w
                 </div>
               </Card>
 
+              {/* Controls Card */}
               <Card>
                 <h3 className="font-semibold text-gray-900 mb-3">Quick Actions</h3>
                 <div className="space-y-2">
@@ -237,12 +246,13 @@ Are you ready to begin? Just say "yes" or "I'm ready" when you'd like to start w
             </div>
           </div>
         ) : (
+          /* Review Section */
           <div className="max-w-4xl mx-auto">
             <Card className="animate-fadeIn">
               <div className="text-center mb-6">
                 <div className="text-6xl mb-4">🎉</div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Interview Complete!</h2>
-                <p className="text-gray-600">Here is your detailed performance review</p>
+                <p className="text-gray-600">Here's your detailed performance review</p>
               </div>
 
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 mb-6">
@@ -271,14 +281,14 @@ Are you ready to begin? Just say "yes" or "I'm ready" when you'd like to start w
 
               <div className="flex justify-center space-x-4">
                 <Button onClick={startNewInterview} size="lg">
-                  Try Another Interview
+                  🚀 Try Another Interview
                 </Button>
                 <Button 
                   onClick={() => router.push('/')} 
                   variant="secondary" 
                   size="lg"
                 >
-                  Back to Home
+                  🏠 Back to Home
                 </Button>
               </div>
             </Card>
